@@ -3,6 +3,7 @@
 -- 1. Llista el títol, l’any d’estrena i la durada de les pel·lícules que es
 -- van estrenar l’any 2017.  Renombra les columnes que consideris adients. Ordena
 -- el resultat pel títol.
+use titol;
 
 
 -- 2. Llista el títol, l’any d’estrena i la durada de les pel·lícules que es 
