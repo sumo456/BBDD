@@ -1,4 +1,4 @@
--- Activitats de consultes amb restriccions de files.
+--- Activitats de consultes amb restriccions de files.
 -- Emprant la BD ‘ucm’, escriu les consultes:
 -- 1. Llista el títol, l’any d’estrena i la durada de les pel·lícules que es
 -- van estrenar l’any 2017.  Renombra les columnes que consideris adients. Ordena
