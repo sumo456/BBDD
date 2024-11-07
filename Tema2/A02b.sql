@@ -1,7 +1,8 @@
 -- Activitats de reforç. Selects amb restriccions
 -- Emprant la BD municipis:
 -- 1. Mostra totes les taules.
-
+use municipis;
+show tables;
 
 -- 2. Descriu l’estructura de totes les taules.
 
