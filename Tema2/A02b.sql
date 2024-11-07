@@ -5,12 +5,15 @@ use municipis;
 show tables;
 
 -- 2. Descriu l’estructura de totes les taules.
-
+describe ComunitatsAutonomes;
+describe Poblacions;
+describe Provincies;
 
 -- 3. Llista el nom de la població, codi postal i número d’habitants de les 100 
 -- primeres poblacions. Ordena el resultat pel nom de la població. Canvia el nom
 --  de la població a un nom inteligible.
 
+select Poblacions;
 
 -- 4. Llista el nom de la població i número d’habitants de les poblacions de la 
 -- població 10 a la 19. Ordena el resultat pel número d’habitants de forma 
