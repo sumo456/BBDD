@@ -13,29 +13,42 @@ describe Provincies;
 -- primeres poblacions. Ordena el resultat pel nom de la població. Canvia el nom
 --  de la població a un nom inteligible.
 
-select Poblacions;
-
+select nompoblacio as "Poblacion", codipostal, numhabitants
+from Poblacions
+order by nompoblacio ASC
+limit 100;
 -- 4. Llista el nom de la població i número d’habitants de les poblacions de la 
 -- població 10 a la 19. Ordena el resultat pel número d’habitants de forma 
 -- descendent.
-
+select nompoblacio, numhabitants
+from Poblacions
+order by numhabitants DESC
+limit 9, 10;
 
 -- 5. Llista totes les dades de la població «La Seu d'Urgell».
-
+select *
+from Poblacions
+where "La Seu d'Urgell" = nompoblacio ;
 
 -- 6. Llista totes les dades de les poblacions «Cubells», «Balaguer», «Cambrils»
 --  i «Puçol».
-
+select *
+from Poblacions
+where nompoblacio IN ("La Seu d'Urgell", "Cubells", "Balaguer", "Cambrils", "Puçol" );
 
 -- 7. Llista el nom de la població i número d’habitants d’aquelles que tenen més
 --  de 100000 habitants. Ordena el resultat de forma descendent pel número 
 -- d’habitants i en cas de tenir el mateix número d’habitants de forma ascendent
 --  pel nom de la població.
-
+select nompoblacio, numhabitants
+from Poblacions
+where numhabitants>= 100000
+order by numhabitants DESC, nompoblacio ASC;
 
 -- 8. Llista el nom de la població número d’habitants d’aquelles que tenen entre
 --  100000 i 200000 habitants (sense utilitzar between). Ordena el resultat de 
 -- forma ascendent pel nom de la població. 
+
 
 
 -- 9. Llista el nom de la població número d’habitants d’aquelles que tenen entre
