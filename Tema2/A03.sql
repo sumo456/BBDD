@@ -3,7 +3,7 @@
 -- 1. Llista el títol i de la pel·lícula i el nom del seu director. Ordena el 
 -- resultat pel títol de la pel·lícula de forma ascendent. Fes que aparegui 
 -- solament els 10 primers resultats.
-
+use ucm;
 
 -- 2. Llista el títol de la pel·lícula, el nom de l’actor i el paper que ha 
 -- interpretat. Ordena el resultat pel títol de la pel·lícula de forma 
