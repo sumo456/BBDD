@@ -114,6 +114,20 @@ WHERE pa.paper = 'Thor';
 -- 11. Llista el nom del director i el títol de la pel·lícula que ha dirigit. 
 -- Inclou també aquells directors que no han dirigit cap pel·lícula.
 
+SELECT d.nom AS Director, p.titol AS Títol
+FROM directors d
+LEFT JOIN pel·lícules p ON d.id = p.director_id;
+
 
 -- 12. Llista el nom dels socis que no han visualitzat cap pel·lícula de la 
 -- productora ‘Paramount’.
+
+SELECT s.nom AS Soci
+FROM socis s
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM visualitzacions v
+    JOIN pel·lícules p ON v.pel·lícula_id = p.id
+    WHERE p.productora = 'Paramount' AND v.soci_id = s.id
+);
+
