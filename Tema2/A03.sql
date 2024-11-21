@@ -69,18 +69,46 @@ AND a.nom != 'Benedict Cumberbatch';
 -- nacionalitat diferent que ‘Benedict Cumberbatch’. Ordena el resultat i canvia
 --  el nom de les columnes.
 
+SELECT a.nom AS Nom, a.nacionalitat AS Nacionalitat
+FROM actors a
+WHERE a.nacionalitat != (
+    SELECT nacionalitat FROM actors WHERE nom = 'Benedict Cumberbatch'
+)
+AND a.gènere = 'M'
+ORDER BY Nom ASC;
+
 
 -- 8. Llista el títol i pressupost d’aquelles pel·lícules que tenen un 
 -- pressupost menor o igual que ‘Capitán América: Civil War’ i més gran o igual 
 -- que ‘Black Panther’. Exclou aquestes dues pel·lícules del resultat.
 
+SELECT p.titol AS Títol, p.pressupost AS Pressupost
+FROM pel·lícules p
+WHERE p.pressupost > (
+    SELECT pressupost FROM pel·lícules WHERE titol = 'Black Panther'
+)
+AND p.pressupost < (
+    SELECT pressupost FROM pel·lícules WHERE titol = 'Capitán América: Civil War'
+);
+
 
 -- 9. Llista el títol de la pel·lícula, el nom de l’actriu i el paper que ha 
 -- interpretat d’aquelles que tenen un paper principal.
 
+SELECT p.titol AS Títol, a.nom AS Actriu, pa.paper AS Paper
+FROM pel·lícules p
+JOIN papers pa ON p.id = pa.pel·lícula_id
+JOIN actors a ON pa.actor_id = a.id
+WHERE pa.tipus = 'Principal' AND a.gènere = 'F';
+
 
 -- 10. Llista el nom de l’actor que ha interpretat alguna vegada a ‘Thor’. Fes 
 -- que no es repeteixin els resultats.
+
+SELECT DISTINCT a.nom AS Actor
+FROM actors a
+JOIN papers pa ON a.id = pa.actor_id
+WHERE pa.paper = 'Thor';
 
 
 -- 11. Llista el nom del director i el títol de la pel·lícula que ha dirigit. 
