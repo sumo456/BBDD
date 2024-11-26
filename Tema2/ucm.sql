@@ -484,13 +484,14 @@ insert into actorspelicules values
 (30, 97, 'Xialing', false),
 (30, 98, 'Ying Nan', false);
 
-insert into pelicules(codi, titol) values(31, 'Eternals''EEUU','Marvel Enterprises', 2021, 21, 402064899, 236200000, '02:36');
+select * from pelicules;
+insert into pelicules values(31, 'Eternals', 'EEUU','Marvel Enterprises', 2021, 21, 402064899, 236200000, '02:36');
 
-insert into pelicules(codi, titol) values(32, 'Spider-Man: No Way Home', 2021, 18, 1921847111, 200000000, '02:28');
+insert into pelicules values(32, 'Spider-Man: No Way Home', Null, Null, 2021, 18, 1921847111, 200000000, '02:28');
 
-insert into pelicules(codi, titol) values(33, 'Doctor Strange in the Multiverse of Madness', 2022, 1, 955775804, 200000000, '02:07');
+insert into pelicules values(33, 'Doctor Strange in the Multiverse of Madness', 'EEUU', null, 2022, 1, 955775804, 200000000, '02:07');
 
-insert into pelicules(codi, titol) values(34, 'Thor: Love and Thunder', 2022, 5, 760928081, 250000000, '01:59');
+insert into pelicules values(34, 'Thor: Love and Thunder', 'EEUU', null, 2022, 5, 760928081, 250000000, '01:59');
 
 create table socis (
    dni              varchar(10) primary key,

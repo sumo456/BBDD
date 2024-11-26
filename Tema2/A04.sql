@@ -1,5 +1,6 @@
 -- Activitats de consultes agrupades.
 -- Emprant la BD ‘ucm’, escriu les consultes:
+use ucm;
 -- 1. Les funcions de grup treballen amb molts registres per produir un únic 
 -- resultat (cert / fals).
 
