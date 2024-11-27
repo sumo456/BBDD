@@ -3,15 +3,15 @@
 use ucm;
 -- 1. Les funcions de grup treballen amb molts registres per produir un únic 
 -- resultat (cert / fals).
-
+-- cert
 
 -- 2. Les funcions de grup inclouen els valors nuls en els seus càlculs. (cert /
 -- fals).
-
+-- fals
 
 -- 3. La clàusula WHERE elimina registres abans de la inclusió en un càlcul de 
 -- grup. (cert / fals).
-
+-- cert
 
 -- 4. Fes una consulta que calculi:
 --     • El nombre de pel·lícules.
@@ -19,6 +19,15 @@ use ucm;
 --     • La mitjana aritmètica de les recaudacions.
 --     • La recaudació mínima.
 --     • La recaudació màxima.
+SELECT 
+    COUNT(*) AS nombre_pelicules,                  -- Nombre total de pel·lícules
+    SUM(recaudacio) AS suma_recaudacions,          -- Suma de les recaptacions
+    AVG(recaudacio) AS mitjana_recaudacions,       -- Mitjana aritmètica de les recaptacions
+    MIN(recaudacio) AS recaudacio_minima,          -- Recaudació mínima
+    MAX(recaudacio) AS recaudacio_maxima           -- Recaudació màxima
+FROM 
+    pelicules;
+
 
 
 -- 5. Llista agrupant pel nom dels directors i quantes pel·lícules ha dirigit. 
