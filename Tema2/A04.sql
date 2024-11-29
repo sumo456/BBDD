@@ -32,6 +32,19 @@ FROM
 
 -- 5. Llista agrupant pel nom dels directors i quantes pel·lícules ha dirigit. 
 -- Ordena el resultat de forma descendent pel nombre de pel·lícules dirigides.
+select * from directors;
+select * from pelicules;
+select * from pelicules p inner join directors d on p.id_director = d.codi;
+select d.nom, count(*) as "Num. pelicules dirigides"
+from directors d
+inner join pelicules p on d.codi = p.id_director
+group by d.nom
+order by count(p.id_director) desc;
+
+select d.nom, p.titol as "Num. pelicules dirigides"
+from directors d
+inner join pelicules p on d.codi = p.id_director
+order by p.id_director;
 
 
 -- 6. Llista agrupant pel títol de les pel·lícules i quantes visualitzacions ha 
